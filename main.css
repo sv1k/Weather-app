@@ -10,6 +10,7 @@ html, body {
 	padding: 0;
 	width: 100vw;
 	height: 100%;
+	font-size: 8px;
 }
 
 
@@ -34,15 +35,15 @@ html, body {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	font-size: 2.5em;
+	font-size: 1.5em;
 	font-family: 'HelveticaNeueCyr-Light', sans-serif;
 	letter-spacing: 0.12em;
-	margin-top: 10%;
+	margin-top: 5%;
 }
 
 .location p {
 	margin-left: 20px;
-	font-size: 1.2em;
+	font-size: 2em;
 	text-align: left;
 }
 
@@ -61,8 +62,8 @@ html, body {
 	flex-direction: row;
 	justify-content: space-around;
 	text-align: center;
-	font-family: 'HelveticaNeueCyr-UltraLight', sans-serif;
-	font-size: 2.7em;
+	font-family: 'HelveticaNeueCyr-Light', sans-serif;
+	font-size: 2.2em;
 	align-items: center;
 	margin-top: -5%;
 	padding: 0 10% 0;
@@ -71,7 +72,7 @@ html, body {
 
 .temp {
 	font-family: 'HelveticaNeueCyr-UltraLight', sans-serif;
-	font-size: 36em;
+	font-size: 30em;
 	color: #fff;
 	text-align: center;
 	margin: 0;
@@ -80,7 +81,7 @@ html, body {
 
 .temperature p span {
 	font-size: 0.4em;
-	padding-top: 8%;
+	padding-top: 2%;
 	position: absolute;
 }
 
@@ -88,7 +89,7 @@ html, body {
 .status-bar {
 	text-align: center;
 	color: #fff;
-	font-size: 2.5em;
+	font-size: 2.2em;
 	line-height: 2em;
 }
 
@@ -96,10 +97,11 @@ html, body {
 	display: flex;
 	width: 100vw;
 	height: 20vh;
+	-webkit-transform:translateZ(0);
 	position: absolute;
 	bottom: 0;
 	background-color: #DCA0D0;
-	font-family: 'HelveticaNeueCyr-UltraLight', sans-serif;
+	font-family: 'HelveticaNeueCyr-Light', sans-serif;
 }
 
 .tab-1,
@@ -110,7 +112,7 @@ html, body {
 	display: flex;
 	align-items: center;
 	color: #fff;
-	font-size: 2.5em;
+	font-size: 1.8em;
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -119,6 +121,12 @@ html, body {
 	letter-spacing: 0.1em;
 }
 
+.day1,
+.day2,
+.day3,
+.day4, {
+	font-size: 1em;
+}
 
 .tab-1,
 .tab-2,
@@ -131,32 +139,33 @@ html, body {
 .tab-1-temp,
 .tab-2-temp,
 .tab-3-temp,
-.tab-4-temp    {
-	font-size: 1.3em;
+.tab-4-temp {
+	font-size: 1.8em;
+	padding-left: 2%;
 }
 
 .tab-1 {
-	background-color: #E1B1D8;
+	background-color: #da87e3;
 	}
 
 .tab-2 {
-	background-color: #DCA0D0;
+	background-color: #cc7edf;
 }
 
 .tab-3 {
-	background-color: #D491C6;
+	background-color: #b67bdb;
 }
 
 .tab-4 {
-	background-color: #CC82C1;
+	background-color: #AD7BDB;
 }
 
 .additional-info {
 	width: 100%;
 	height: 30vh;
 	font-family: 'HelveticaNeueCyr-Light', sans-serif;
-	font-size: 2.7em;
-	margin-top: 5%;
+	font-size: 2em;
+	margin-top: 2%;
 	float: left;
 }
 
