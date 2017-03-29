@@ -64,15 +64,13 @@ $(function () {
 			return res.json();
 		}).then(function (res) {
 			city = res.adminName1;
-				$(".location").append("<p>" + city.toUpperCase() + "<br>" + "</p>");
-				$(".location-tommorow").append("<p>" + city.toUpperCase() + "<br>" + "</p>");
+				$(".location").append("<p>" + city + "<br>" + "</p>");
+
+		console.log(city);
 		}).catch(function (err) {
 			console.error(err.message);
 		});
 	};
-
-	console.log(document.readyState);
-	console.log(latitude);
 
 	currentTime();
 	checkTime();
@@ -115,17 +113,12 @@ function getWeather(data) {
 
 	active.push(todayDate, weatherIcon, temperature, todaySummary, weekWeather, todayTempMin, todayTempMax);
 
-	console.log(active);
-
-	console.log(weekWeather);
-
-	console.log(wind);
-
+	console.log(data);
 
 	$(document).ready(function () {
 		$(".temp").html(active[2] + "<span>" + "&deg" + "</span>");
 		$(".weather-icon").addClass('flaticon-' + active[1]);
-		$(".location p").append("<span>" + active[0].toUpperCase() + "</span>");
+		$(".location p").append("<span>" + todayDate.toUpperCase() + "</span>");
 		$("p.day1").append(new Date(tomorrow.time * 1000).toLocaleString('en', { weekday: 'long' }));
 		$(".tab-1 span").addClass('flaticon-' + tomorrow.icon);
 		$(".tab-1-temp").append(tomorrowTemp + "&deg;");
@@ -139,33 +132,24 @@ function getWeather(data) {
 		$(".tab-4 span").addClass('flaticon-' + fourthDay.icon);
 		$(".tab-4-temp").append(fourthDayTemp + "&deg;");
 		$(".weather-status p").append("<span>" + wind + "m/s" + "</span>").append("<span>" + "Feels like: " + Math.floor(tempFeels) + "&deg;" + "c" + "</span>").append("<span class='flaticon-raindrop'>" + " %" + Math.floor(humidity) + "</span>");
-		$(".additional-info p").append("<br>" + active[3] + "<br>" + "<br>" + "H: " + active[6] + "&#x2103;" + " / " + "L: " + active[5] + "&#x2103;" + "<br>" + "<br>" + active[4]).css("display", "none");
+		$(".additional-info p").append("<br>" + active[3] + "<br>" + "<br>" + "H: " + active[6] + "&#x2103;" + " / " + "L: " + active[5] + "&#x2103;" + "<br>" + "<br>" + active[4]);
+		 $(".fade").hide(0).delay(100).fadeIn(500)
 	});
 
-	$(".screen").on("click", function () {
-		$(".tabs p span").slideToggle(400);
-		$(".tabs").slideToggle(300);
-		$(".additional-info p").slideToggle(400);
+	$(".additional-info").on("touchend", function () {
+		$(".tabs").toggleClass("tabs-hide");
+		$(".additional-info p").toggleClass("additional-opacity");
 	});
-	$(".tabs").on("click", function (ev) {
+	$(".tabs").on("touchend", function (ev) {
 		ev.stopPropagation();
 	});
 	console.log(tomorrowTemp);
-	$(".tab-1").click(function () {
-		$(".second-screen").fadeIn(500);
-	});
-	$(".second-screen").click(function () {
-		$(this).fadeOut(400);
-	});
-	$(".second-screen").on("click", function (ev) {
-		ev.stopPropagation();
-	});
+
 
 	if (temperature < 0) {
 		$(".temp").css("padding-right", "10%");
 	};
 
 	console.log(todayDate);
-
-	console.log(weather);
 };
+

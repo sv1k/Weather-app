@@ -8,6 +8,7 @@
 	<script src="node_modules/promise-polyfill/promise.min.js"></script>
 	<script src="node_modules/whatwg-fetch/fetch.js"></script>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/pulltorefreshjs/dist/pulltorefresh.js"></script>
 	<script src="main.js"></script>
 </head>
 <body>
@@ -16,6 +17,7 @@
 		<div class="status-bar">
 			<p></p>
 		</div>
+		<div class="fade">
 		<div class="location">
 			<div class="weather-icon"></div>
 		</div>
@@ -26,6 +28,7 @@
 		<p></p>
 		</div>
 		<div class="temperature-toggle"></div>
+
 	<div class="tabs">
 		<div class="tab-1">
 			<p class="day1"></p>
@@ -51,8 +54,11 @@
 			<p class="tab-4-temp"></p>
 		</div>
 	</div>
-	<div class="additional-info">
-		<p></p>
+		<div class="additional-info">
+			<p class="show"></p>
+		</div>
+		</div>
 	</div>
+	<script src="pull.js"></script>
 </body>
 </html>

@@ -29,6 +29,11 @@ html, body {
 	color: #fff;
 }
 
+.swiper-container {
+	width: 100vw;
+	height: 100vh;
+}
+
 
 .location {
 	display: flex;
@@ -97,12 +102,21 @@ html, body {
 	display: flex;
 	width: 100vw;
 	height: 20vh;
-	-webkit-transform:translateZ(0);
 	position: absolute;
 	bottom: 0;
 	background-color: #DCA0D0;
 	font-family: 'HelveticaNeueCyr-Light', sans-serif;
+	transition: all .3s;
+	will-change: transform;
+	-webkit-transform: translateY(0);
 }
+
+.tabs-hide {
+	will-change: transform;
+	-webkit-transform: translateY(20vh);
+}
+
+
 
 .tab-1,
 .tab-2,
@@ -145,7 +159,7 @@ html, body {
 }
 
 .tab-1 {
-	background-color: #da87e3;
+	background-color: #da81e3;
 	}
 
 .tab-2 {
@@ -169,7 +183,13 @@ html, body {
 	float: left;
 }
 
-.additional-info p {
+.show {
 	padding: 3% 14% 0;
 	letter-spacing: 2px;
+	opacity: 0;
+	transition: .2s all;
+}
+
+.additional-opacity {
+	opacity: 1;
 }
