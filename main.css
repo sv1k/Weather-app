@@ -14,6 +14,49 @@ html, body {
 }
 
 
+@media screen and (max-device-width: 320px) and (max-device-height: 480px){
+	body {
+		font-size: 6px;
+	}
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 375px) and (min-device-height: 485px) and (max-device-height: 570px){
+	body {
+		font-size: 7px;
+	}
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 375px) and (min-device-height: 600px){
+	body {
+		font-size: 8px;
+	}
+}
+
+@media screen and (min-device-width: 385px) and (max-device-width: 414px) and (min-device-height: 720px){
+	body {
+		font-size: 9px;
+	}
+}
+
+/*@media only screen and (max-device-width: 320px) and (max-device-height: 568px) and (min-device-height: 480px){
+	body {
+		font-size: 7px;
+	}
+}
+
+@media only screen and (max-device-width: 320px) and (max-device-height: 480px) {
+	body {
+		font-size: 6px;
+	}
+}*/
+
+/*@media only screen and (min-device-width: 400px) and (min-device-height: 730px) {
+	body {
+		font-size: 9px;
+	}
+}
+*/
+
 .screen {
 	display: flex;
 	flex-direction: column;
@@ -109,11 +152,13 @@ html, body {
 	transition: all .3s;
 	will-change: transform;
 	-webkit-transform: translateY(0);
+	transform: translateY(0);
 }
 
 .tabs-hide {
 	will-change: transform;
-	-webkit-transform: translateY(20vh);
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
 }
 
 
@@ -176,7 +221,7 @@ html, body {
 
 .additional-info {
 	width: 100%;
-	height: 30vh;
+	height: 0vh;
 	font-family: 'HelveticaNeueCyr-Light', sans-serif;
 	font-size: 2em;
 	margin-top: 2%;
@@ -188,6 +233,7 @@ html, body {
 	letter-spacing: 2px;
 	opacity: 0;
 	transition: .2s all;
+	height: 18vh;
 }
 
 .additional-opacity {
