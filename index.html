@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta http-equiv="Cache-Control" content="no-cache" />
 	<title>Weather widget</title>
 	<link rel="stylesheet" href="main.css">
 	<script src="node_modules/promise-polyfill/promise.min.js"></script>
@@ -27,9 +29,33 @@
 		<div class="weather-status">
 		<p></p>
 		</div>
-		<div class="temperature-toggle"></div>
+
+		<div class="additional-info">
+			<p class="show"></p>
+		</div>
+
+		<div class="forecast1 forecast-hide">
+			<p class="forecast-info1">
+			</p>
+		</div>
+
+		<div class="forecast2 forecast-hide">
+			<p class="forecast-info2">
+			</p>
+		</div>
+
+		<div class="forecast3 forecast-hide">
+			<p class="forecast-info3">
+			</p>
+		</div>
+
+		<div class="forecast4 forecast-hide">
+			<p class="forecast-info4">
+			</p>
+		</div>
 
 	<div class="tabs">
+
 		<div class="tab-1">
 			<p class="day1"></p>
 			<span></span>
@@ -54,9 +80,7 @@
 			<p class="tab-4-temp"></p>
 		</div>
 	</div>
-		<div class="additional-info">
-			<p class="show"></p>
-		</div>
+
 		</div>
 	</div>
 	<script src="pull.js"></script>

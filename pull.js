@@ -3,8 +3,8 @@
 
 	PullToRefresh.init({
 		mainElement: '.location',
+		triggerElement: '.location',
 		onRefresh: function(){
-				// What do you want to do when the user does the pull-to-refresh gesture
 				window.location.reload(); 
 		}
 });

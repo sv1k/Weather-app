@@ -50,7 +50,7 @@ $(function () {
 
 	function createScript(lat, long) {
 		var basicUrl = "https://api.darksky.net/forecast/b1d8361f145557f19805d62a45a93e3a/",
-				cb = "?callback=getWeather" + langVersion,
+				cb = "?exclude=hourly,flags&" + "callback=getWeather" + langVersion,
 				script = document.createElement("script");
 
 		script.src = basicUrl + lat + "," + long + cb;
@@ -115,6 +115,8 @@ function getWeather(data) {
 
 	console.log(data);
 
+	console.log(weather.daily.data[1]);
+
 	$(document).ready(function () {
 		$(".temp").html(active[2] + "<span>" + "&deg" + "</span>");
 		$(".weather-icon").addClass('flaticon-' + active[1]);
@@ -133,18 +135,36 @@ function getWeather(data) {
 		$(".tab-4-temp").append(fourthDayTemp + "&deg;");
 		$(".weather-status p").append("<span>" + wind + "m/s" + "</span>").append("<span>" + "Feels like: " + Math.floor(tempFeels) + "&deg;" + "c" + "</span>").append("<span class='flaticon-raindrop'>" + " %" + Math.floor(humidity) + "</span>");
 		$(".additional-info p").append("<br>" + active[3] + "<br>" + "<br>" + "H: " + active[6] + "&#x2103;" + " / " + "L: " + active[5] + "&#x2103;" + "<br>" + "<br>" + active[4]);
-		 $(".fade").hide(0).delay(100).fadeIn(500)
+		$(".forecast-info1").append(Math.floor(tomorrow.apparentTemperatureMax) + "<span>" + "&deg" + "</span>"+ " / " + Math.floor(tomorrow.apparentTemperatureMin));
+		$(".forecast-info2").append(Math.floor(secondDay.apparentTemperatureMax) + "<span>" + "&deg" + "</span>"+ " / " + Math.floor(secondDay.apparentTemperatureMin));
+		$(".forecast-info3").append(Math.floor(thirdDay.apparentTemperatureMax) + "<span>" + "&deg" + "</span>"+ " / " + Math.floor(thirdDay.apparentTemperatureMin));
+		$(".forecast-info4").append(Math.floor(fourthDay.apparentTemperatureMax) + "<span>" + "&deg" + "</span>" + " / " + Math.floor(fourthDay.apparentTemperatureMin) + "&deg");
+		$(".fade").hide(0).fadeIn(500)
+
 	});
 
-	$(".additional-info").on("touchend", function () {
+	$(".temp").on("touchend", function () {
 		$(".tabs").toggleClass("tabs-hide");
 		$(".additional-info p").toggleClass("additional-opacity");
 	});
-	$(".tabs").on("touchend", function (ev) {
-		ev.stopPropagation();
-	});
-	console.log(tomorrowTemp);
 
+	$(".tab-1").on("touchend", function () {
+		$(".forecast1").toggleClass("forecast-hide");
+	})
+
+	$(".tab-2").on("touchend", function () {
+		$(".forecast2").toggleClass("forecast-hide");
+	})
+
+	$(".tab-3").on("touchend", function () {
+		$(".forecast3").toggleClass("forecast-hide");
+	})
+
+	$(".tab-4").on("touchend", function () {
+		$(".forecast4").toggleClass("forecast-hide");
+	})
+
+	console.log(tomorrowTemp);
 
 	if (temperature < 0) {
 		$(".temp").css("padding-right", "10%");

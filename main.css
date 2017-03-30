@@ -30,6 +30,9 @@ html, body {
 	body {
 		font-size: 8px;
 	}
+	.forecast-info {
+		padding-top: 15%;
+	}
 }
 
 @media screen and (min-device-width: 385px) and (max-device-width: 414px) and (min-device-height: 720px){
@@ -38,24 +41,6 @@ html, body {
 	}
 }
 
-/*@media only screen and (max-device-width: 320px) and (max-device-height: 568px) and (min-device-height: 480px){
-	body {
-		font-size: 7px;
-	}
-}
-
-@media only screen and (max-device-width: 320px) and (max-device-height: 480px) {
-	body {
-		font-size: 6px;
-	}
-}*/
-
-/*@media only screen and (min-device-width: 400px) and (min-device-height: 730px) {
-	body {
-		font-size: 9px;
-	}
-}
-*/
 
 .screen {
 	display: flex;
@@ -80,13 +65,13 @@ html, body {
 
 .location {
 	display: flex;
+	height: 17vh;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	font-size: 1.5em;
 	font-family: 'HelveticaNeueCyr-Light', sans-serif;
 	letter-spacing: 0.12em;
-	margin-top: 5%;
 }
 
 .location p {
@@ -120,7 +105,7 @@ html, body {
 
 .temp {
 	font-family: 'HelveticaNeueCyr-UltraLight', sans-serif;
-	font-size: 30em;
+	font-size: 27em;
 	color: #fff;
 	text-align: center;
 	margin: 0;
@@ -148,6 +133,7 @@ html, body {
 	position: absolute;
 	bottom: 0;
 	background-color: #DCA0D0;
+	box-shadow: 0 -1px 3px rgba(173, 65, 217, 0.3);
 	font-family: 'HelveticaNeueCyr-Light', sans-serif;
 	transition: all .3s;
 	will-change: transform;
@@ -155,11 +141,6 @@ html, body {
 	transform: translateY(0);
 }
 
-.tabs-hide {
-	will-change: transform;
-	-webkit-transform: translateY(100%);
-	transform: translateY(100%);
-}
 
 
 
@@ -219,6 +200,11 @@ html, body {
 	background-color: #AD7BDB;
 }
 
+.tabs-hide {
+	will-change: transform;
+	-webkit-transform: translateY(101%);
+	transform: translateY(101%);
+}
 .additional-info {
 	width: 100%;
 	height: 0vh;
@@ -229,6 +215,8 @@ html, body {
 }
 
 .show {
+	display: block;
+	box-sizing: border-box;
 	padding: 3% 14% 0;
 	letter-spacing: 2px;
 	opacity: 0;
@@ -238,4 +226,34 @@ html, body {
 
 .additional-opacity {
 	opacity: 1;
+}
+
+.forecast1,
+.forecast2,
+.forecast3,
+.forecast4 {
+	display: block;
+	width: 100%;
+	height: 30vh;
+	position: absolute;
+	box-sizing: border-box;
+	background: rgba(173, 65, 217, 0.1);
+	border-radius: 10px;
+	border: 2px solid rgba(173, 65, 217, 0.3);
+	transition: all .6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.forecast-info1,
+.forecast-info2,
+.forecast-info3,
+.forecast-info4 {
+	font-size: 2em;
+	padding: 10%;
+	text-align: center;
+}
+
+
+.forecast-hide {
+	transform: translateY(100vh);
+	transition: all .6s linear;
 }
