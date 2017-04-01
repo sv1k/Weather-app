@@ -164,6 +164,30 @@ function getWeather(data) {
 		$(".forecast4").toggleClass("forecast-hide");
 	})
 
+	$(".tab-1").on("touchstart", function () {
+		$(".forecast2").addClass("forecast-hide");
+		$(".forecast3").addClass("forecast-hide");
+		$(".forecast4").addClass("forecast-hide");
+	})
+
+	$(".tab-2").on("touchstart", function () {
+		$(".forecast1").addClass("forecast-hide");
+		$(".forecast3").addClass("forecast-hide");
+		$(".forecast4").addClass("forecast-hide");
+	})
+
+	$(".tab-3").on("touchstart", function () {
+		$(".forecast1").addClass("forecast-hide");
+		$(".forecast2").addClass("forecast-hide");
+		$(".forecast4").addClass("forecast-hide");
+	})
+
+	$(".tab-4").on("touchstart", function () {
+		$(".forecast1").addClass("forecast-hide");
+		$(".forecast2").addClass("forecast-hide");
+		$(".forecast3").addClass("forecast-hide");
+	})
+
 	console.log(tomorrowTemp);
 
 	if (temperature < 0) {
